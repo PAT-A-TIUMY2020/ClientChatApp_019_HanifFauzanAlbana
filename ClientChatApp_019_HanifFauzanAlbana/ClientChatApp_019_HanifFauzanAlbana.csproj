@@ -65,9 +65,6 @@
     <None Include="Connected Services\ServiceReference1\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\WCFService_2Way_019.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\DataSources\WCFService_2Way_019.CompositeType.datasource" />
   </ItemGroup>
   <ItemGroup>

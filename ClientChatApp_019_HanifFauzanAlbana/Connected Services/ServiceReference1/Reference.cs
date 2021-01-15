@@ -12,20 +12,8 @@ namespace ClientChatApp_019_HanifFauzanAlbana.ServiceReference1 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IServiceCallback")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IServiceCallback", CallbackContract=typeof(ClientChatApp_019_HanifFauzanAlbana.ServiceReference1.IServiceCallbackCallback))]
     public interface IServiceCallback {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCallback/GetData", ReplyAction="http://tempuri.org/IServiceCallback/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCallback/GetData", ReplyAction="http://tempuri.org/IServiceCallback/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCallback/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IServiceCallback/GetDataUsingDataContractResponse")]
-        WCFService_2Way_019.CompositeType GetDataUsingDataContract(WCFService_2Way_019.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCallback/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IServiceCallback/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<WCFService_2Way_019.CompositeType> GetDataUsingDataContractAsync(WCFService_2Way_019.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceCallback/gabung")]
         void gabung(string username);
@@ -41,46 +29,38 @@ namespace ClientChatApp_019_HanifFauzanAlbana.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IServiceCallbackCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IServiceCallback/pesanKirim")]
+        void pesanKirim(string user, string pesan);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IServiceCallbackChannel : ClientChatApp_019_HanifFauzanAlbana.ServiceReference1.IServiceCallback, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceCallbackClient : System.ServiceModel.ClientBase<ClientChatApp_019_HanifFauzanAlbana.ServiceReference1.IServiceCallback>, ClientChatApp_019_HanifFauzanAlbana.ServiceReference1.IServiceCallback {
+    public partial class ServiceCallbackClient : System.ServiceModel.DuplexClientBase<ClientChatApp_019_HanifFauzanAlbana.ServiceReference1.IServiceCallback>, ClientChatApp_019_HanifFauzanAlbana.ServiceReference1.IServiceCallback {
         
-        public ServiceCallbackClient() {
+        public ServiceCallbackClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public ServiceCallbackClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public ServiceCallbackClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public ServiceCallbackClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public ServiceCallbackClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceCallbackClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public ServiceCallbackClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public ServiceCallbackClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
-        }
-        
-        public WCFService_2Way_019.CompositeType GetDataUsingDataContract(WCFService_2Way_019.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
-        }
-        
-        public System.Threading.Tasks.Task<WCFService_2Way_019.CompositeType> GetDataUsingDataContractAsync(WCFService_2Way_019.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
+        public ServiceCallbackClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
         public void gabung(string username) {
